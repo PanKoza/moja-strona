@@ -1,0 +1,398 @@
+<head>
+  <meta charset="UTF-8">
+  <title>WebGoat</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/jquery-3.7.1.js"></script>
+  <script src="scripts/script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;700;900&display=swap&subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <h1>WebGoat</h1>
+        </div>
+        <div id="przyciski">
+          <button id="Konsultacja">UMÓW KONSULTACJĘ</button>
+        </div>
+    </header>
+
+    <landing>
+      <video autoplay muted loop playsinline id="bg-video">
+        <source src="img/Filmik_Na_Tło_Landing_Page.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje wideo.
+      </video>
+      <div class="landing-content">
+        <h2>NAJLEPSI PROFESJONALIŚCI Z ŚWIEŻYM SPOJRZENIEM</h2>
+        <h1>ZROBIMY CI PROFESLONALNĄ STRONĘ</h1>
+        <h3>Strony Brandingowe, sklepy E-commerce, Strony Wizytówkowe</h3>
+        <h3>Strony dla firm, blogi, portfolia</h3>
+        <h3>Strony dla influencerów, strony dla artystów</h3>
+        <button id="Konsultacja">UMÓW KONSULTACJĘ</button>
+      </div>
+    </landing>
+
+    <content>  
+      <div class="content-container">
+        <h1>O NAS</h1>
+        <p>Jesteśmy zespołem profesjonalistów z pasją do tworzenia stron internetowych. Nasze doświadczenie i świeże spojrzenie pozwalają nam dostarczać rozwiązania, które nie tylko spełniają oczekiwania, ale także przekraczają je.</p>
+        <h1>NASZE USŁUGI</h1>
+        <ul>
+          <li>Strony Brandingowe</li>
+          <li>Strony Wizytówkowe</li>
+          <li>Strony dla firm</li>
+          <li>Blogi i Portfolia</li>
+          <li>Strony dla influencerów i artystów</li>
+        </ul>
+        <section id="dlaczego">
+        <h1>DLACZEGO MY?</h1>
+        <p>Wybierając nas, zyskujesz partnera, który rozumie Twoje potrzeby i cele. Nasze podejście opiera się na współpracy, transparentności i dążeniu do doskonałości. Jesteśmy tu, aby pomóc Ci osiągnąć sukces w sieci.</p>
+        </section>
+        <h1>PROCES NASZEJ PRACY</h1>
+        <div id="process">
+        <button class="process-btn">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/solid/arrow-left.svg" alt="Arrow Left">
+        </button>
+          <div id="process-step_one">
+            <h2>Krok 1: Analiza Potrzeb Klienta</h2>
+            <p>Rozpoczynamy od szczegółowej konsultacji, aby zrozumieć cele biznesowe, grupę docelową oraz unikalne potrzeby Twojej marki. Dzięki temu tworzymy fundament pod skuteczne rozwiązania.</p>
+          </div>
+          <div id="process-step_two">
+            <h2>Krok 2: Projektowanie UX/UI</h2>
+            <p>Tworzymy nowoczesny, intuicyjny projekt graficzny, dbając o spójność wizualną i wygodę użytkownika. Każdy detal jest konsultowany i dopasowany do Twojej branży.</p>
+          </div>
+          <div id="process-step_three">
+            <h2>Krok 3: Profesjonalna Realizacja</h2>
+            <p>Programujemy stronę zgodnie z najnowszymi standardami, dbając o wydajność, bezpieczeństwo i responsywność. Integrujemy niezbędne narzędzia oraz systemy.</p>
+          </div>
+          <div id="process-step_four">
+            <h2>Krok 4: Testy i Wdrożenie</h2>
+            <p>Przeprowadzamy kompleksowe testy funkcjonalne i wydajnościowe. Po akceptacji uruchamiamy stronę oraz zapewniamy wsparcie powdrożeniowe.</p>
+          </div>
+        <button class="process-btn">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/solid/arrow-right.svg" alt="Arrow Right">
+        </button>
+        </div>
+      </div>
+
+
+      <section id="sekcja_cen">
+        <h1>POZNAJ NASZE CENY</h1>
+        <p>Poznaj cenę swojej strony w kilka sekund!</p>
+        <div id="ceny">
+          <div class="ceny-item">
+            <label for="type">Typ Strony:</label>
+            <select id="type">
+              <option value="wizytowka">Strona Wizytówkowa</option>
+              <option value="branding">Strona Brandingowa</option>
+              <option value="firmy">Strony dla firm</option>
+              <option value="blog">Blogi i Portfolia</option>
+              <option value="influencer">Strona dla Influencera i Artysty</option>
+            </select>
+          </div>
+
+          <div id="wizytowka">
+            <h1>Szybka i prosta prezentacja kluczowych informacji o firmie lub osobie.</h1>
+      <table class="oferta-table">
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Pakiet Podstawowy<br>(Basic)</th>
+        <th>Pakiet Standard<br>(Pro)</th>
+        <th>Pakiet Premium<br>(Premium)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przybliżony koszt netto</td>
+        <td>1 500 - 2 500 zł</td>
+        <td>2 500 - 4 000 zł</td>
+        <td>4 000 - 6 000 zł+</td>
+      </tr>
+      <tr>
+        <td>Projekt graficzny</td>
+        <td>Dostosowanie gotowego szablonu premium</td>
+        <td>Indywidualnie dopasowany szablon / Lekki custom design</td>
+        <td>Pełny, indywidualny projekt graficzny (UI/UX)</td>
+      </tr>
+      <tr>
+        <td>Typ / Liczba podstron</td>
+        <td>Strona One Page (jedna, przewijana strona)</td>
+        <td>Do 5 podstron (np. O nas, Oferta, Cennik, Kontakt)</td>
+        <td>Rozbudowany One Page lub do 5-7 podstron z animacjami</td>
+      </tr>
+      <tr>
+        <td>Kluczowe funkcjonalności</td>
+        <td>Formularz kontaktowy, mapa Google, RODO</td>
+        <td>Galeria zdjęć, slidery, integracja z social media</td>
+        <td>Zaawansowane animacje, nietypowy layout, wideo w tle</td>
+      </tr>
+      <tr>
+        <td>Optymalizacja SEO</td>
+        <td>Podstawowa optymalizacja techniczna</td>
+        <td>Rozszerzona optymalizacja techniczna i treści</td>
+        <td>Pełna optymalizacja on-site wraz z konsultacją</td>
+      </tr>
+      <tr>
+        <td>Idealny dla</td>
+        <td>Nowych firm, małych lokali usługowych, freelancerów</td>
+        <td>Firm chcących szerzej zaprezentować ofertę</td>
+        <td>Marek, które chcą się wyróżnić od samego początku</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+          <div id="branding">
+            <h1>Budowanie wizerunku i emocjonalnej więzi z marką poprzez unikalne doświadczenie wizualne i interaktywne.</h1>
+  <table class="oferta-table">
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Pakiet Podstawowy<br>(Creative)</th>
+        <th>Pakiet Standard<br>(Experience)</th>
+        <th>Pakiet Premium<br>(Immersive)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przybliżony koszt netto</td>
+        <td>7 000 - 12 000 zł</td>
+        <td>12 000 - 20 000 zł</td>
+        <td>30 000 zł+</td>
+      </tr>
+      <tr>
+        <td>Główny cel</td>
+        <td>Opowiadanie historii marki (storytelling)</td>
+        <td>Wywołanie efektu "wow", zaangażowanie użytkownika</td>
+        <td>Stworzenie niezapomnianego doświadczenia cyfrowego</td>
+      </tr>
+      <tr>
+        <td>Projekt graficzny</td>
+        <td>Unikalny, artystyczny projekt graficzny</td>
+        <td>Projekt z zaawansowanymi animacjami i mikrointerakcjami</td>
+        <td>Eksperymentalny design, animacje 3D, niestandardowa nawigacja</td>
+      </tr>
+      <tr>
+        <td>Interaktywność</td>
+        <td>Płynne przejścia, efekty paralaksy</td>
+        <td>Elementy aktywowane scrollowaniem, niestandardowy kursor</td>
+        <td>Interakcje bazujące na ruchach myszy, elementy WebGL</td>
+      </tr>
+      <tr>
+        <td>Kluczowe funkcjonalności</td>
+        <td>Skupienie na typografii, wideo i obrazie</td>
+        <td>Wciągające galerie, osie czasu, interaktywne mapy</td>
+        <td>Dedykowane rozwiązania programistyczne, integracja z kampaniami</td>
+      </tr>
+      <tr>
+        <td>Idealny dla</td>
+        <td>Marek kreatywnych, produktów premium, kampanii marketingowych</td>
+        <td>Firm z branży fashion, design, architektury, eventowej</td>
+        <td>Liderów rynku, marek globalnych, projektów artystycznych</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+          <div id="firmy">
+            <h1>Profesjonalna prezentacja firmy, budowanie wizerunku eksperta i aktywne generowanie zapytań ofertowych.</h1>
+  <table class="oferta-table">
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Pakiet Podstawowy<br>(Basic)</th>
+        <th>Pakiet Standard<br>(Business)</th>
+        <th>Pakiet Premium<br>(Enterprise)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przybliżony koszt netto</td>
+        <td>4 000 - 7 000 zł</td>
+        <td>7 000 - 15 000 zł</td>
+        <td>15 000 - 30 000 zł+</td>
+      </tr>
+      <tr>
+        <td>Projekt graficzny</td>
+        <td>Wysokiej jakości projekt indywidualny (UI)</td>
+        <td>Zaawansowany projekt UI z procesem UX</td>
+        <td>Pełny proces UX/UI, warsztaty z klientem, prototypowanie</td>
+      </tr>
+      <tr>
+        <td>Liczba podstron</td>
+        <td>5 - 10 podstron</td>
+        <td>10 - 25 podstron</td>
+        <td>Bez ograniczeń, złożona architektura informacji</td>
+      </tr>
+      <tr>
+        <td>Kluczowe funkcjonalności</td>
+        <td>Blog, rozbudowana oferta, formularze, aktualności</td>
+        <td>Wersje językowe, dedykowane ikony, integracja z CRM/Newsletterem</td>
+        <td>Dedykowane kalkulatory, konfiguratory, strefa klienta/logowanie</td>
+      </tr>
+      <tr>
+        <td>Optymalizacja SEO</td>
+        <td>Pełna optymalizacja on-site</td>
+        <td>Optymalizacja on-site + strategia słów kluczowych</td>
+        <td>Zaawansowana strategia SEO, optymalizacja prędkości Core Web Vitals</td>
+      </tr>
+      <tr>
+        <td>Materiały</td>
+        <td>Praca na materiałach klienta</td>
+        <td>Wsparcie w redakcji tekstów (copywriting)</td>
+        <td>Pełny copywriting SEO, możliwość organizacji sesji zdjęciowej</td>
+      </tr>
+      <tr>
+        <td>Idealny dla</td>
+        <td>Ugruntowanych MŚP, firm usługowych</td>
+        <td>Średnich i dużych firm, producentów, firm B2B</td>
+        <td>Dużych przedsiębiorstw, korporacji, marek o zasięgu międzynarodowym</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+          <div id="blog">
+            <h1>Profesjonalna i estetyczna prezentacja twórczości, prac i wiedzy eksperckiej.</h1>
+  <table class="oferta-table">
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Pakiet Podstawowy<br>(Creator)</th>
+        <th>Pakiet Standard<br>(Professional)</th>
+        <th>Pakiet Premium<br>(Expert)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przybliżony koszt netto</td>
+        <td>2 500 - 4 500 zł</td>
+        <td>4 500 - 8 000 zł</td>
+        <td>8 000 - 12 000 zł+</td>
+      </tr>
+      <tr>
+        <td>Projekt graficzny</td>
+        <td>Dopasowanie szablonu premium pod styl autora</td>
+        <td>Indywidualny projekt graficzny bloga lub portfolio</td>
+        <td>Pełny branding i projekt UI/UX dopasowany do marki osobistej</td>
+      </tr>
+      <tr>
+        <td>Prezentacja prac</td>
+        <td>Standardowa siatka galerii, kategorie wpisów</td>
+        <td>Zaawansowane filtrowanie, różne układy galerii</td>
+        <td>Dynamiczne case studies, ochrona prac znakiem wodnym</td>
+      </tr>
+      <tr>
+        <td>Kluczowe funkcjonalności</td>
+        <td>Integracja z social media, formularz kontaktowy</td>
+        <td>Zaawansowane sortowanie, system komentarzy, newsletter</td>
+        <td>Sprzedaż produktów cyfrowych (presety, e-booki), kalendarz</td>
+      </tr>
+      <tr>
+        <td>Idealny dla</td>
+        <td>Hobbystów, początkujących fotografów, copywriterów</td>
+        <td>Profesjonalnych fotografów, projektantów, blogerów</td>
+        <td>Ekspertów, szkoleniowców, twórców z ugruntowaną marką</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+          <div id="influencer">
+            <h1>Stworzenie centralnego miejsca w sieci, które profesjonalizuje wizerunek i ułatwia komercyjne współprace.</h1>
+  <table class="oferta-table">
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Pakiet Podstawowy<br>(Influencer)</th>
+        <th>Pakiet Standard<br>(Brand)</th>
+        <th>Pakiet Premium<br>(Media Hub)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przybliżony koszt netto</td>
+        <td>4 000 - 7 000 zł</td>
+        <td>7 000 - 12 000 zł</td>
+        <td>12 000 zł+</td>
+      </tr>
+      <tr>
+        <td>Główny cel</td>
+        <td>Profesjonalny wizerunek i punkt kontaktowy</td>
+        <td>Monetyzacja marki osobistej i prezentacja portfolio</td>
+        <td>Stworzenie platformy medialnej wokół marki osobistej</td>
+      </tr>
+      <tr>
+        <td>Projekt graficzny</td>
+        <td>Indywidualny projekt zgodny z marką osobistą</td>
+        <td>Zaawansowany projekt z naciskiem na prezentację współprac</td>
+        <td>Unikalny projekt z elementami wideo i interaktywnymi</td>
+      </tr>
+      <tr>
+        <td>Kluczowe funkcjonalności</td>
+        <td>Sekcja "O mnie", portfolio, feed z Instagrama</td>
+        <td>Interaktywny Media Kit do pobrania, case studies współprac</td>
+        <td>Zintegrowany sklep, sprzedaż produktów, strefa dla partnerów</td>
+      </tr>
+      <tr>
+        <td>Materiały</td>
+        <td>Praca na materiałach klienta</td>
+        <td>Wsparcie w stworzeniu profesjonalnego Media Kitu</td>
+        <td>Dedykowane wideo, sesja zdjęciowa, profesjonalny copywriting</td>
+      </tr>
+      <tr>
+        <td>Idealny dla</td>
+        <td>Rozwijających się influencerów i artystów</td>
+        <td>Profesjonalnych twórców z dużą bazą obserwujących</td>
+        <td>Liderów opinii, czołowych artystów i influencerów</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      </section>
+      <section id="kontakt">
+        <h1>SKONTAKTUJ SIĘ Z NAMI</h1>
+        <p>Masz pytania? Chcesz umówić się na konsultację? Skontaktuj się z nami!</p>
+        <form id="contact-form">
+          <label for="name">Imię i Nazwisko:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Wiadomość:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Wyślij</button>
+        </form>
+    </content>
+
+  <footer>
+  <div class="stopki-container">
+    <div class="stopka">
+        <h1>ADRES PRYWATNOŚCI</h1>
+        <br>
+        <p>NIP: 9491782435</p>
+        <p>REGON: 541485493</p>
+        <br>
+        <p>Nr rachunku:</p>
+        <p>32 1090 2372 0000 0001 6240 9367</p>
+    </div>
+    <div class="stopka">
+        <h1>KONTAKT</h1>
+        <br>
+        <p>tel. 883 821 301</p>
+        <p>jakub.kuzakowski@gmail.com</p>
+    <nav>
+      <a href="tel:+48883821301" title="Zadzwoń" rel="noopener">
+        <img src="img/352510_local_phone_icon.svg" alt="Telefon">
+      </a>
+      <a href="https://wa.me/48883821301" title="WhatsApp" target="_blank" rel="noopener">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+      </a>
+    </nav>
+    </div>
+  </div>
+</footer>
+</body>
