@@ -983,4 +983,29 @@ footer p {
     border-radius: 18px;
     margin-top: 8px;
   }
+
+  #ceny {
+    width: 98vw;
+    max-width: 99vw;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ceny-item {
+    width: 96vw;
+    max-width: 98vw;
+    padding: 12px 2vw;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    align-items: flex-start;
+  }
+  .ceny-item label,
+  .ceny-item select {
+    width: 100%;
+    text-align: left;
+    font-size: 1.5rem;
+  }
 }
