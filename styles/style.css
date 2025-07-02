@@ -743,17 +743,41 @@ footer p {
   filter: grayscale(0) brightness(0.9);
 }
 @media (max-width: 700px) {
+body {
+  max-width: 100vw;
+}
+
   header {
     flex-direction: column;
-    padding: 16px 4vw 16px 4vw;
-    width: 98%;
+    width: 100vw;
+    height: 38vh;      /* jeszcze większy header */
+    min-height: 210px; /* jeszcze wyższe minimum */
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
   #logo h1 {
-    font-size: 1.3rem;
+    font-size: 3.3rem;
+    letter-spacing: 3px;
+    padding-bottom: 12px;
+  }
+  #przyciski button,
+  #Konsultacja {
+    font-size: 1.25rem;
+    padding: 18px 36px;
+    border-radius: 32px;
   }
   .landing-content {
-    padding: 10vh 2vw 4vh 2vw;
-    width: 98vw;
+    padding: 14vh 2vw 6vh 2vw;
+    width: 99vw;
+  }
+  .landing-content h1 {
+    font-size: 2.2rem;
+  }
+  .landing-content h2 {
+    font-size: 1.5rem;
+  }
+  .landing-content h3 {
+    font-size: 1.15rem;
   }
   .content-container {
     padding: 24px 2vw;
@@ -777,6 +801,8 @@ footer p {
     flex-direction: column;
     gap: 18px;
     margin: 30px 0 0 0;
+    max-width: 100vw;
+    width: 100vw;
   }
   #process > div {
     min-width: 0;
@@ -851,30 +877,3 @@ footer p {
     height: 18px;
   }
 }
-
-@media (max-width: 500px) {
-  .content-container,
-  #dlaczego,
-  #sekcja_cen,
-  #kontakt {
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
-  .landing-content {
-    padding: 6vh 1vw 2vh 1vw;
-    width: 99vw;
-  }
-  .content-container ul li {
-    font-size: 0.92rem;
-    padding: 8px 4px 8px 28px;
-  }
-  .oferta-table th, .oferta-table td {
-    font-size: 0.85rem;
-    padding: 6px 1px;
-  }
-  .stopka {
-    padding: 8px 2vw 4px 2vw;
-  }
-}
-
-/* --- KONIEC RESPONSYWNOŚCI --- */
