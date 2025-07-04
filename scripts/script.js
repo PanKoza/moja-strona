@@ -143,4 +143,17 @@ $(function() {
       $btn.prop('disabled', false).text('Wyślij');
     });
   });
+
+  // Przewijanie do formularza kontaktowego po kliknięciu przycisku "Konsultacja"
+  $('.Konsultacja').on('click', function(e) {
+    e.preventDefault();
+    const $target = $('#kontakt');
+    if ($target.length) {
+      // Jeśli header jest fixed, odejmij jego wysokość
+      const headerHeight = $('header').outerHeight() || 0;
+      $('html, body').animate({
+        scrollTop: $target.offset().top - headerHeight - 12
+      }, 600);
+    }
+  });
 });
