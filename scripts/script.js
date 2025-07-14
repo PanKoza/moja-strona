@@ -119,30 +119,7 @@ $(function() {
     showCenyDiv($(this).val());
   });
 
-  // Obsługa formularza kontaktowego AJAX
-  $('#contact-form').on('submit', function(e) {
-    e.preventDefault();
-    var $form = $(this);
-    var $btn = $form.find('button[type="submit"]');
-    $btn.prop('disabled', true).text('Wysyłanie...');
-    $.ajax({
-      url: 'scripts/wyslij_mail.php',
-      method: 'POST',
-      data: $form.serialize(),
-      dataType: 'json'
-    }).done(function(res) {
-      if(res.success) {
-        alert(res.msg);
-        $form[0].reset();
-      } else {
-        alert(res.msg);
-      }
-    }).fail(function() {
-      alert('Wystąpił błąd połączenia z serwerem.');
-    }).always(function() {
-      $btn.prop('disabled', false).text('Wyślij');
-    });
-  });
+
 
   // Przewijanie do formularza kontaktowego po kliknięciu przycisku "Konsultacja"
   $('.Konsultacja').on('click', function(e) {
