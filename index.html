@@ -10,6 +10,7 @@
   <script src="scripts/script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;700;900&display=swap&subset=latin-ext" rel="stylesheet">
   <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17331008754"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17331008754'); </script>
+   <!-- Event snippet for Kontakt conversion page --> <script> gtag('event', 'conversion', {'send_to': 'AW-17331008754/gDXbCOmNi-0aEPLpiMhA'}); </script>
 </head>
 <body>
     <header>
@@ -399,4 +400,20 @@
     </div>
   </div>
 </footer>
+<div id="cookie-banner" style="display:none; position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:rgba(34,34,34,0.98); color:#ffe0b2; padding:22px 28px; border-radius:18px; box-shadow:0 2px 18px rgba(34,34,34,0.18); z-index:9999; font-family:'Montserrat',Arial,sans-serif; max-width:95vw; text-align:center;">
+  Ta strona korzysta z plików cookie w celu poprawy jakości usług. Korzystając z niej, akceptujesz politykę cookies.
+  <button id="cookie-accept" style="margin-left:18px; background:#ffb347; color:#232526; border:none; border-radius:12px; padding:8px 22px; font-weight:700; cursor:pointer; font-size:1rem;">Akceptuję</button>
+</div>
+
+<script>
+$(function() {
+  if (!localStorage.getItem('cookieAccepted')) {
+    $('#cookie-banner').fadeIn(300);
+  }
+  $('#cookie-accept').on('click', function() {
+    localStorage.setItem('cookieAccepted', '1');
+    $('#cookie-banner').fadeOut(300);
+  });
+});
+</script>
 </body>
