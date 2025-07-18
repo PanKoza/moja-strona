@@ -1,127 +1,85 @@
-$(window).on('scroll', function() {
-  if ($(window).scrollTop() === 0) {
-    $('header').addClass('transparent');
-  } else {
-    $('header').removeClass('transparent');
-  }
-});
-
-$(function() {
-  if ($(window).scrollTop() === 0) {
-    $('header').addClass('transparent');
-  }
-
-  // Animacja kroków w #process
-  const $steps = $('#process').children('div');
+$(function () {
+  // Proces animowany krok po kroku
+  const $steps = $('#process > div');
+  const $leftBtn = $('#process .process-btn').first();
+  const $rightBtn = $('#process .process-btn').last();
   let current = 0;
-  let intervalId;
-  let animating = false;
+
+  // Ukryj wszystkie kroki oprócz pierwszego
   $steps.hide().eq(0).show();
 
   function showStep(idx, direction = 1) {
-    if (idx === current || animating) return;
-    animating = true;
-    const $current = $steps.eq(current);
+    if (idx < 0) idx = $steps.length - 1;
+    if (idx >= $steps.length) idx = 0;
+    const $current = $steps.filter(':visible');
     const $next = $steps.eq(idx);
 
-    // Kierunek animacji (1 = w prawo, -1 = w lewo)
-    const outLeft = direction > 0 ? '-80px' : '80px';
-    const inLeft = direction > 0 ? '80px' : '-80px';
-
-    // Nowoczesna animacja z rozmyciem i skalą
+    // Animacja wyjścia
     $current
-      .css({zIndex: 1})
+      .css('position', 'absolute')
       .animate(
-        {opacity: 0, left: outLeft, filter: "blur(8px) brightness(0.8)", scale: 0.97},
-        {
-          duration: 350,
-          step: function(now, fx) {
-            if (fx.prop === "opacity") {
-              $(this).css("transform", `scale(${0.97 + 0.03 * now})`);
-            }
-          },
-          complete: function() {
-            $(this).hide().css({opacity: 1, left: 0, zIndex: '', filter: '', transform: ''});
-          }
+        { opacity: 0, left: direction > 0 ? '-=60px' : '+=60px' },
+        250,
+        function () {
+          $current.hide().css({ opacity: 1, left: 0, position: '' });
+          // Animacja wejścia
+          $next
+            .css({ opacity: 0, left: direction > 0 ? '60px' : '-60px', position: 'relative', display: 'block' })
+            .animate({ opacity: 1, left: 0 }, 350);
         }
       );
-
-    $next
-      .css({display: 'block', opacity: 0, left: inLeft, zIndex: 2, filter: "blur(8px) brightness(1.2)", transform: "scale(1.06)"})
-      .animate(
-        {opacity: 1, left: 0, filter: "blur(0px) brightness(1)", scale: 1},
-        {
-          duration: 500,
-          step: function(now, fx) {
-            if (fx.prop === "opacity") {
-              $(this).css("transform", `scale(${1.06 - 0.06 * (1-now)})`);
-            }
-          },
-          complete: function() {
-            $(this).css({zIndex: '', filter: '', transform: ''});
-            animating = false;
-          }
-        }
-      );
-
     current = idx;
   }
 
-  function showNextStep() {
-    let next = (current + 1) % $steps.length;
-    showStep(next, 1);
-  }
-
-  function showPrevStep() {
-    let prev = (current - 1 + $steps.length) % $steps.length;
-    showStep(prev, -1);
-  }
-
-  function startInterval() {
-    intervalId = setInterval(showNextStep, 5000);
-  }
-
-  function stopInterval() {
-    clearInterval(intervalId);
-  }
-
-  // Start animacji
-  startInterval();
-
-  // Zatrzymywanie animacji po najechaniu myszką na dowolny krok
-  $steps.on('mouseenter', stopInterval);
-  $steps.on('mouseleave', startInterval);
-
-  // Obsługa strzałek
-  $('.process-btn').eq(0).on('click', function() {
-    stopInterval();
-    showPrevStep();
-    startInterval();
-  });
-  $('.process-btn').eq(1).on('click', function() {
-    stopInterval();
-    showNextStep();
-    startInterval();
+  $rightBtn.on('click', function () {
+    showStep(current + 1, 1);
   });
 
-  // Skrypt do sekcji cen
-  function showCenyDiv(selected) {
-    // Ukryj wszystkie divy z ofertami
+  $leftBtn.on('click', function () {
+    showStep(current - 1, -1);
+  });
+
+  // Swipe na urządzeniach mobilnych
+  let touchStartX = null;
+  $('#process').on('touchstart', function (e) {
+    touchStartX = e.originalEvent.touches[0].clientX;
+  });
+  $('#process').on('touchend', function (e) {
+    if (touchStartX === null) return;
+    let touchEndX = e.originalEvent.changedTouches[0].clientX;
+    if (touchEndX - touchStartX > 50) {
+      showStep(current - 1, -1); // Swipe right
+    } else if (touchStartX - touchEndX > 50) {
+      showStep(current + 1, 1); // Swipe left
+    }
+    touchStartX = null;
+  });
+
+  // Sekcja cen: dynamiczne wyświetlanie odpowiedniej tabeli/oferty
+  function showCenySection(type) {
     $('#wizytowka, #branding, #firmy, #blog, #influencer').hide();
-    // Pokaż wybrany div
-    $('#' + selected).fadeIn(200);
+    if (type === 'wizytowka') {
+      $('#wizytowka').show();
+    } else if (type === 'branding') {
+      $('#branding').show();
+    } else if (type === 'firmy') {
+      $('#firmy').show();
+    } else if (type === 'blog') {
+      $('#blog').show();
+    } else if (type === 'influencer') {
+      $('#influencer').show();
+    }
   }
 
-  // Domyślnie pokaż pierwszy (branding)
-  showCenyDiv($('#type').val());
+  // Pokaż domyślnie pierwszą sekcję
+  showCenySection($('#type').val());
 
-  $('#type').on('change', function() {
-    showCenyDiv($(this).val());
+  // Obsługa zmiany selecta
+  $('#type').on('change', function () {
+    showCenySection($(this).val());
   });
 
-
-
-  // Przewijanie do formularza kontaktowego po kliknięciu przycisku "Konsultacja"
+  // Przewijanie do formularza kontaktowego po kliknięciu dowolnego przycisku .Konsultacja
   $('.Konsultacja').on('click', function(e) {
     e.preventDefault();
     const $target = $('#kontakt');
