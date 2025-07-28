@@ -9,14 +9,30 @@
   <script src="scripts/jquery-3.7.1.js"></script>
   <script src="scripts/script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;700;900&display=swap&subset=latin-ext" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17331008754"></script>
+<!-- Event snippet for Przesłanie formularza conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17331008754/J0IlCKfN6_oaEPLpiMhA',
+      'value': 1.0,
+      'currency': 'PLN',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-17331008754');
+  gtag('config', '624-657-2939');
 </script>
 
 </head>
@@ -435,12 +451,37 @@
 
 <script>
 $(function() {
+  // Cookie banner
   if (!localStorage.getItem('cookieAccepted')) {
     $('#cookie-banner').fadeIn(300);
   }
   $('#cookie-accept').on('click', function() {
     localStorage.setItem('cookieAccepted', '1');
     $('#cookie-banner').fadeOut(300);
+  });
+
+  // Google Ads conversion on Formspree submit
+  $('#contact-form').on('submit', function(e) {
+    var form = this;
+    e.preventDefault();
+    $.ajax({
+      url: $(form).attr('action'),
+      method: $(form).attr('method'),
+      data: $(form).serialize(),
+      dataType: "json",
+      success: function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17331008754/J0IlCKfN6_oaEPLpiMhA',
+          'value': 1.0,
+          'currency': 'PLN'
+        });
+        // Opcjonalnie: pokaż komunikat lub wyczyść formularz
+        $(form).html('<p>Dziękujemy za wysłanie wiadomości!</p>');
+      },
+      error: function() {
+        alert('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.');
+      }
+    });
   });
 });
 </script>
