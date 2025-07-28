@@ -9,21 +9,14 @@
   <script src="scripts/jquery-3.7.1.js"></script>
   <script src="scripts/script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;700;900&display=swap&subset=latin-ext" rel="stylesheet">
-  <!-- Event snippet for Przesłanie formularza kontaktowego conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17331008754"></script>
 <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17331008754/_3pjCMXe1_oaEPLpiMhA',
-      'event_callback': callback
-  });
-  return false;
-}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17331008754');
 </script>
 
 </head>
